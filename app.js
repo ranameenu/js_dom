@@ -27,4 +27,32 @@ scriptsArr.forEach(function(script)
 })
 console.log(scriptsArr);
 
-// console.log(val);
+console.log(val); 
+
+------------------------------------------------------------
+
+// SELECTORS BY SINGLE ELEMENT
+
+
+// document.getElementbyId();
+//can use className instead of id
+console.log(document.getElementById('task-title'));
+console.log(document.getElementById('task-title').id);  
+
+const taskTitle = document.getElementById('task-title');
+
+// change styling
+taskTitle.style.color='black';
+taskTitle   .style.background='grey';
+taskTitle.style.textAlign='left';
+taskTitle.style.padding='5px';
+
+// change content
+//innerText can use instead of textContent
+taskTitle.textContent='Task List' 
+taskTitle.innerHTML='<span style="color:white">Task List</span>';
+
+
+
+
+
