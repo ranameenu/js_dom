@@ -53,20 +53,67 @@
 // taskTitle.innerHTML='<span style="color:white">Task List</span>';
 
 
-// document.querySelector()
+// // document.querySelector()
+// console.log(document.querySelector('#task-title'));
+// console.log(document.querySelector('h5'));
+// console.log(document.querySelector('.collection-item'));
+// console.log(document.querySelector('ul'));
 
-console.log(document.querySelector('#task-title'));
-console.log(document.querySelector('h5'));
-console.log(document.querySelector('.collection-item'));
-console.log(document.querySelector('ul'));
+
+// document.querySelector('li:last-child').style.color='green';
+// document.querySelector('li:nth-child(2)').style.color='green';
+// document.querySelector('li:nth-child(odd)').style.background='grey';
+// document.querySelector('li:nth-child(4)').style.background='green';
+// document.querySelector('li:nth-child(5)').textContent=`It's Done`;
+// document.querySelector('i').style.color='green';
 
 
-document.querySelector('li:last-child').style.color='green';
-document.querySelector('li:nth-child(2)').style.color='green';
-document.querySelector('li:nth-child(odd)').style.background='grey';
-document.querySelector('li:nth-child(4)').style.background='green';
-document.querySelector('li:nth-child(5)').textContent=`It's Done`;
-document.querySelector('i').style.color='green';
+
+// traversing the dom
+
+let val;
+const infoForm = document.querySelector('form');
+const list = document.querySelector('ul.collection');
+const listItem = document.querySelector('li.collection-item');
+const listItemChild = document.querySelector('li.collection-item:nth-child(4)');
+
+// GET CHILD NODES
+val = listItem.children;
+val=list.childNodes[1].nodeType;
+val = list.children[1];
+list.children[1].textContent='hey this is 2nd node';  //to change the text value of the element
+
+val = list.children[3].children[0]; //to find children of children
+
+list.children[3].children[0].id='collect';
+
+
+// CHILD ELEMENT
+val = list.firstElementChild;
+val=list.childElementCount;
+
+// GET PARENT NODE
+// work as same
+val=listItem.parentElement;
+val1 = listItem.parentNode;
+
+
+// parent of parent
+val=listItem.parentElement.parentElement;
+
+// GET NEXT SIBLINGS  
+val=listItem.nextSibling;
+val=listItem.nextElementSibling;
+val=listItem.nextElementSibling.nextElementSibling.parentElement;
+
+// GET PREVIOUS SIBLING
+val=listItem.previousElementSibling; //bcoz it is first child can 't have previous sibling
+val=listItem.nextElementSibling.nextElementSibling.nextElementSibling.previousElementSibling;
+
+
+console.log(val);
+
+
 
 
 
