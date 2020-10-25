@@ -69,49 +69,77 @@
 
 
 
-// traversing the dom
+// // traversing the dom
 
-let val;
-const infoForm = document.querySelector('form');
-const list = document.querySelector('ul.collection');
-const listItem = document.querySelector('li.collection-item');
-const listItemChild = document.querySelector('li.collection-item:nth-child(4)');
+// let val;
+// const infoForm = document.querySelector('form');
+// const list = document.querySelector('ul.collection');
+// const listItem = document.querySelector('li.collection-item');
+// const listItemChild = document.querySelector('li.collection-item:nth-child(4)');
 
-// GET CHILD NODES
-val = listItem.children;
-val=list.childNodes[1].nodeType;
-val = list.children[1];
-list.children[1].textContent='hey this is 2nd node';  //to change the text value of the element
+// // GET CHILD NODES
+// val = listItem.children;
+// val=list.childNodes[1].nodeType;
+// val = list.children[1];
+// list.children[1].textContent='hey this is 2nd node';  //to change the text value of the element
 
-val = list.children[3].children[0]; //to find children of children
+// val = list.children[3].children[0]; //to find children of children
 
-list.children[3].children[0].id='collect';
-
-
-// CHILD ELEMENT
-val = list.firstElementChild;
-val=list.childElementCount;
-
-// GET PARENT NODE
-// work as same
-val=listItem.parentElement;
-val1 = listItem.parentNode;
+// list.children[3].children[0].id='collect';
 
 
-// parent of parent
-val=listItem.parentElement.parentElement;
+// // CHILD ELEMENT
+// val = list.firstElementChild;
+// val=list.childElementCount;
 
-// GET NEXT SIBLINGS  
-val=listItem.nextSibling;
-val=listItem.nextElementSibling;
-val=listItem.nextElementSibling.nextElementSibling.parentElement;
-
-// GET PREVIOUS SIBLING
-val=listItem.previousElementSibling; //bcoz it is first child can 't have previous sibling
-val=listItem.nextElementSibling.nextElementSibling.nextElementSibling.previousElementSibling;
+// // GET PARENT NODE
+// // work as same
+// val=listItem.parentElement;
+// val1 = listItem.parentNode;
 
 
-console.log(val);
+// // parent of parent
+// val=listItem.parentElement.parentElement;
+
+// // GET NEXT SIBLINGS  
+// val=listItem.nextSibling;
+// val=listItem.nextElementSibling;
+// val=listItem.nextElementSibling.nextElementSibling.parentElement;
+
+// // GET PREVIOUS SIBLING
+// val=listItem.previousElementSibling; //bcoz it is first child can 't have previous sibling
+// val=listItem.nextElementSibling.nextElementSibling.nextElementSibling.previousElementSibling;
+
+
+// console.log(val);
+
+
+// ELEMENT CREATE
+
+const li = document.createElement('li');
+
+// insert id nd class to element
+li.className = 'collection-item';
+li.id= 'collect-item';
+li.setAttribute('value' , 'new item');
+li.appendChild(document.createTextNode('hello World'));
+
+//create li as child ul
+document.querySelector('ul.collection').appendChild(li);
+
+// create link
+const link = document.createElement('a');
+
+// Add class
+link.className = 'delete-item secondary-content';
+
+// append icon html
+link.innerHTML = '<i class="fa fa-remove"></i>';
+
+li.appendChild(link);
+
+
+console.log(li);
 
 
 
